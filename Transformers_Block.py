@@ -14,19 +14,19 @@ class SelfAttentionHead(nn.Module):
         B, T, C = x.shape
         k = self.key(x)
         q = self.query(x)
-        wei = q @ k.transpose(-2, -1) / (C ** 0.5)
+        wei = q@k.transpose(-2, -1) / (C ** 0.5)
         wei = wei.masked_fill(self.tril[:T, :T] == 0, float('-inf'))
-        wei = f.software(wei, dim = -1)
+        wei = f.softmax(wei, dim = -1)
         v = self.value(x)
         out = wei @ v 
         return out
 
 
 class MultiHeadAttention(nn.Module):
-    def __init(self, embedding_dim, block_size, num_heads):
+    def __init__(self, embedding_dim, block_size, num_heads):
         super().__init__()
         head_size = embedding_dim // num_heads
-        self.headds = nn.ModuleList([SelfAttentionHead(embedding_dim, block_size, head_size) for _ in range(num_heads)])
+        self.heads = nn.ModuleList([SelfAttentionHead(embedding_dim, block_size, head_size) for _ in range(num_heads)])
         self.proj = nn.Linear(num_heads * head_size, embedding_dim)
 
     def forward(self, x):
@@ -48,7 +48,7 @@ class FeedForward(nn.Module):
 
 class Block(nn.Module):
     def __init__(self, embedding_dim, block_size, n_heads):
-        super().__init_()
+        super().__init__()
         self.sa = MultiHeadAttention(embedding_dim, block_size, n_heads)
         self.ffwd = FeedForward(embedding_dim)
         self.ln1 = nn.LayerNorm(embedding_dim)

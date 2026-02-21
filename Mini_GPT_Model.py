@@ -16,3 +16,41 @@ corpus = [
 corpus = [s + " <END> " for s in corpus]
 text = " ".join(corpus)
 print(text)
+
+words = list(set(text.split()))
+print(words)
+
+vocab_size = len(words)
+print(vocab_size)
+
+word2idx = {w: i for i, w in enumerate(words)}
+print('word2idx : ',word2idx)
+
+idx2words = {i: w for w, i in enumerate(words)}
+print('idx2words : ', idx2words)
+
+data = torch.tensor([word2idx[w] for w in text.split()], dtype = torch.long)
+print('data : ', data)
+print(len(data))
+
+block_size = 6
+embedding_dim = 32
+n_heads = 2
+n_layers = 2
+lr = 1e-3
+epchs = 1500
+
+def get_batch(batch_size = 16):
+    ix = torch.randint(len(data) - block_size, (batch_size,))
+    x = torch.stack([data[i:i+block_size] for i in ix])
+    y = torch.stack([data[i:i+block_size] for i in ix])
+    return x, y
+
+
+class TinyGPT(nn.Module):
+    def __init__(self):
+        super().__init__()
+        self.token_embedding = nn.Embedding(vocab_size, embedding_dim)
+
+        
+        
