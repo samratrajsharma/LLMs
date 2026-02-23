@@ -1,0 +1,6 @@
+"Hello my name is champ",
+"The quick brown fox jumps over the lazy dog.",
+"Artificial intelligence is transforming the way we solve complex problems.",
+"Graph neural networks are powerful tools for modeling relational data.",
+"Diffusion models generate images by progressively removing noise.",
+"Effective machine learning systems require both strong theory and practical experimentation."
