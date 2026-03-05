@@ -143,7 +143,7 @@ for step in range(epochs):
 #print(" ".join(idx2word[int(i)] for i in out[0]))
 
 import sentencepiece as spm
-sp = spm.SentencePieceProcessor()
+sp = spm.SentencePieceProcessor()     
 sp.load("tokenizer.model")
 
 context = torch.tensor([sp.encode("hello")], dtype=torch.long)
