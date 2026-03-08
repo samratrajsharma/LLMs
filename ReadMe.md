@@ -1,4 +1,3 @@
-content = """
 # Large Language Models (LLMs) Research Workspace
 
 This repository section serves as a dedicated workspace for exploring and implementing the core concepts behind **Large Language Models (LLMs)**. It focuses on understanding the internal mechanics of modern language models by building components from scratch and experimenting with different architectural elements used in contemporary AI systems.
@@ -185,10 +184,3 @@ Focus Areas:
 - Generative AI  
 - Deep Learning Architectures  
 - AI Systems Engineering
-"""
-
-path = "/mnt/data/LLMs_ReadMe.md"
-with open(path, "w", encoding="utf-8") as f:
-    f.write(content)
-
-path
