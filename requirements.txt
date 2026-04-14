@@ -1,0 +1,52 @@
+# Core deep learning frameworks
+torch
+torchvision
+torchaudio
+tensorflow   # optional, if you want TF/Keras support
+
+# Hugging Face ecosystem
+transformers
+datasets
+tokenizers
+accelerate
+peft          # parameter-efficient fine-tuning
+trl           # training with RLHF
+
+# Retrieval-Augmented Generation (RAG) & vector search
+langchain
+langgraph
+faiss-cpu     # or faiss-gpu if you have CUDA
+chromadb
+weaviate-client
+pinecone-client
+
+# Data processing & utilities
+numpy
+pandas
+scikit-learn
+nltk
+spacy
+
+# Visualization & monitoring
+matplotlib
+seaborn
+tensorboard
+wandb         # experiment tracking
+
+# Audio/Multimodal (optional, for Whisper or CLIP)
+openai-whisper
+pillow
+opencv-python
+
+# Deployment & serving
+fastapi
+uvicorn
+gradio
+streamlit
+
+# Misc utilities
+tqdm
+requests
+
+# tokenizer
+tiktoken
