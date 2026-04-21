@@ -1,0 +1,43 @@
+# Ignore the entire gpt2 folder
+gpt2/
+
+# Common deep learning model checkpoints
+*.pth
+*.pt
+*.bin
+*.ckpt
+*.model
+
+# Hugging Face cache and datasets
+.cache/
+huggingface/
+datasets/
+
+# Python build and environment files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Logs and outputs
+*.log
+logs/
+outputs/
+runs/
+
+# OS-specific junk
+.DS_Store
+Thumbs.db
